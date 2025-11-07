@@ -50,10 +50,15 @@ class WikipediaSurfer:
         """The main interaction loop for the WikipediaSurfer."""
         quit = False
         while not quit:
+            self.display_page()
             choice = self.get_user_choice()
             quit = choice == 1
             self.update_graph(choice)
 
+    def display_page(self) -> None:
+        # TODO: Print a message containing the keyword and the number of times
+        #       the target word appears in the current webpage.
+    
     @property
     def webpages_so_far(self) -> SortedSet[WikipediaPage]:
         # TODO: Return the set of all WikipediaPages that have been explored so far.
