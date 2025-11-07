@@ -3,18 +3,41 @@
 
 # Homework 8
 
-## Learning outcomes
+## Overview
 
-- Iterator
+In this assignment, students will interactively download and parse webpages from Wikipedia.org.
+
+Students will get practice with:
 - Comparable
-- Equality
-- Hashing
+- Equality and hashing
 - Recursion on Trees (DFS)
+- Scraping websites
 
-Students write a ["choose your own adventure" book](https://en.wikipedia.org/wiki/Gamebook). This assignment will be based on [this Nifty assignment](http://nifty.stanford.edu/2025/piech-infinite-story/infinite_story_assn_handout.pdf), but modified so that...
+## Part 1: Download and parse a single webpage using `requests` and `BeautifulSoup`
 
-Students will write two iterators:
-- one that reads the book front to back (weird for "choose your own adventure")
-- one that goes down every possible path (DFS)
+You may need to `pip install requests beautifulsoup4` to install both. Because we are limited in the packages we can install on the Pawtograder servers, you must use these two libraries to download the webpage. You may use Claude or a similar LLM to learn about the syntax needed to do this.
 
-Students are explicitly allowed to use LLMs for writing the text of the story (not for writing code).
+Once you have found how to download a webpage in a few lines of code, encapsulate it in a class called `WikipediaPage`. The constructor should take a keyword as the argument, and if there exists a Wikipedia page with that title, it should request and save as attributes:
+1. The keyword
+2. The text of the webpage
+3. A list of all the links found on the webpage
+
+For example, if the keyword is `"effervescence"`, it should:
+1. Check and make sure there is a webpage at `https://en.wikipedia.org/wiki/Effervescence`. (Note the case insensitivity.) If there is not, raise an appropriate error.
+3. Store the keyword `"effervescence"` as an appropritately named attribute.
+4. Store the text of the webpage as an appropritately named attribute.
+5. Store the list of all links on the webpage as an appropriately named attribute (as a list).
+
+Overwrite the `__eq__()` and `__hash__()` methods so that two `WikipediaPage`s are equal if they have the same keyword (title in the URL).
+
+## Part 2: Make `WikipediaPage` `Comparable`
+
+Choose a word, such as "effervescence". Make a class attribute that stores this word as a `target_word`.
+When two `WikipediaPage`s are compared, the one with more instances of the `target_word` is considered "bigger".
+
+## Part 3: Add the ability to interactively traverse the Wikipedia webpage graph
+
+
+## Part 4 Try it out
+
+In `main.py`,
