@@ -55,7 +55,8 @@ It may be useful to `pip3 install sortedcontainers sortedcontainers-stubs`.
 
 ## Part 4: Try it out
 
-In `main.py`, create an instance of `WikipediaSurfer` and interact with your application. After quitting, copy
-the list of keywords outputted into the appropriate question in `Summary.md`.
+In `main.py`, create an instance of `WikipediaSurfer` and interact with your application. Try to find a webpage
+with a high number of instances of the target word. After quitting, copy the list of keywords outputted into 
+the appropriate question in `Summary.md`.
 
 Anwer the other questions in `Summary.md`.
