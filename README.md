@@ -20,13 +20,13 @@ You may need to `pip install requests beautifulsoup4` to install both. Because w
 Once you have found how to download a webpage in a few lines of code, encapsulate it in a class called `WikipediaPage`. The constructor should take a keyword as the argument, and if there exists a Wikipedia page with that title, it should request and save as attributes:
 1. The keyword
 2. The text of the webpage
-3. A list of all the links found on the webpage
+3. A list of all the Wikipedia links found on the webpage
 
 For example, if the keyword is `"effervescence"`, it should:
 1. Check and make sure there is a webpage at `https://en.wikipedia.org/wiki/Effervescence`. (Note the case insensitivity.) If there is not, raise an appropriate error.
 3. Store the keyword `"effervescence"` as an appropritately named attribute.
 4. Store the text of the webpage as an appropritately named attribute.
-5. Store the list of all links on the webpage as an appropriately named attribute (as a list).
+5. From the list of all links on the webpage, store the ones for Wikipedia pages as an appropriately named attribute (as a list).
 
 Overwrite the `__eq__()` and `__hash__()` methods so that two `WikipediaPage`s are equal if they have the same keyword (title in the URL).
 
