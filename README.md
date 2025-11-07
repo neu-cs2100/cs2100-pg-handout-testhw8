@@ -30,11 +30,15 @@ For example, if the keyword is `"effervescence"`, it should:
 
 Overwrite the `__eq__()` and `__hash__()` methods so that two `WikipediaPage`s are equal if they have the same keyword (title in the URL).
 
-Overwrite the `__str__()` and `__repr__()` methods to return the keyword (title in the URL).
+Overwrite the `__repr__()` method to return the keyword (title in the URL).
 
 ## Part 2: Make `WikipediaPage` `Comparable`
 
 Choose a word, such as "effervescence". Make a class attribute that stores this word as a `target_word`.
+
+Overwrite the `__str__()` method to return a message containing the keyword and the number of times the `target_word` appears
+in the text of the webpage.
+
 When two `WikipediaPage`s are compared, the one with more instances of the `target_word` is considered "bigger".
 
 ## Part 3: Add the ability to interactively traverse the Wikipedia webpage graph
