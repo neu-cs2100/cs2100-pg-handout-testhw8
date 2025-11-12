@@ -17,16 +17,18 @@ Students will get practice with:
 
 You may need to `pip3 install requests types-requests beautifulsoup4 types-beautifulsoup4` to install both, along with their type stubs. Because we are limited in the packages we can install on the Pawtograder servers, you must use these two libraries to download the webpage. You may use Claude or a similar LLM to learn about the syntax needed to do this.
 
+This page about the Wikimedia Foundation's User Agent policy may help: https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy
+
 Once you have found how to download a webpage in a few lines of code, encapsulate it in a class called `WikipediaPage` (in `wikipedia_page.py`). The constructor should take a keyword as the argument, and if there exists a Wikipedia page with that title, it should request and save as attributes:
 1. The keyword
 2. The text of the webpage
-3. A list of all the Wikipedia links found on the webpage
+3. A list of all unique Wikipedia links found on the webpage, sorted alphabetically
 
 For example, if the keyword is `"effervescence"`, it should:
 1. Check and make sure there is a webpage at `https://en.wikipedia.org/wiki/Effervescence`. (Note the case insensitivity.) If there is not, raise an appropriate error.
 3. Store the keyword `"effervescence"` as an appropritately named attribute.
 4. Store the text of the webpage as an appropritately named attribute.
-5. From the list of all links on the webpage, store the ones for Wikipedia pages as an appropriately named attribute (as a list).
+5. From the list of all links on the webpage, store the ones for Wikipedia pages as an appropriately named attribute (as a sorted list of unique words).
 
 Overwrite the `__eq__()` and `__hash__()` methods so that two `WikipediaPage`s are equal if they have the same keyword (title in the URL).
 
@@ -52,7 +54,7 @@ You will need to add documentation. You may remove the "TODO" comments after imp
 
 It may be useful to `pip3 install sortedcontainers sortedcontainers-stubs`.
 
-You should test all methods that you write, as usual, except any printed output or user input.
+As usual, you should test all funtions that you write.
 
 ## Part 4: Try it out
 

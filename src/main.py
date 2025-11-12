@@ -1,3 +1,4 @@
+from pyparsing import Optional
 from sortedcontainers import SortedSet
 import sys
 
@@ -7,6 +8,8 @@ from src.wikipedia_page import WikipediaPage
 
 
 class WikipediaSurfer:
+    max_options: Optional[int] = None # 20
+
     def __init__(self, target_word: str) -> None:
         # TODO: Update target_word appropriately in WikipediaPage
         # TODO: Ask the user for a start wikipedia page, and keep asking until they
@@ -26,7 +29,11 @@ class WikipediaSurfer:
         #       4: <keyword2>
         #       ...""
         #       The <keyword> placeholders should be replaced with all options for wikipedia pages
-        #       available on the current_page.
+        #       available on the current_page. If max_options is not None, include that many options 
+        #       at most. The user can still select any valid link, but the message to be printed will
+        #       include max_options number of link options. Include the first max_options - 1 number 
+        #       of links, plus the last link. For example, if there are 50 links, and max_options is 20,
+        #       the options should include links 1-19, and link 50.
         #       "Go back to the previous page" should only be included as an option if the previous_pages
         #       attribute is not empty.
         pass
