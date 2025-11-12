@@ -7,13 +7,13 @@ from src.wikipedia_page import WikipediaPage
 
 
 class WikipediaSurfer:
-    def __init__(self, target_keyword: str) -> None:
-        # TODO: Store target_keyword appropriately in WikipediaPage
+    def __init__(self, target_word: str) -> None:
+        # TODO: Update target_word appropriately in WikipediaPage
         # TODO: Ask the user for a start wikipedia page, and keep asking until they
-        #       give a keyword that has a wikipedia page. Store it as a
-        #       WikipediaPage attribute called "root".
+        #       give a keyword that has a wikipedia page. Store it in this class as an
+        #       attribute of type WikipediaPage called "root".
         # TODO: Also create a "current_page" attribute, with the "root" page's value.
-        # TODO: Also create a "previous_pages" list, which starts out as an empty list.
+        # TODO: Also create a "previous_pages" list, which starts out as an empty list of WikipediaPages.
         #       As more pages are visited, they will get appended to the end of this list.
         pass
 
@@ -33,17 +33,21 @@ class WikipediaSurfer:
 
     def get_user_choice(self) -> int:
         # TODO: Print the list of options returned by list_options() and get the user's input for their
-        #       choice. Keep asking until they enter a valid choice. Return the int for their choice.
+        #       choice. Keep asking until they enter a valid choice. You only need to print the options
+        #       once, and not again each time the user enters something invalid. Return the int for 
+        #       their choice.
         pass
 
     def update_graph(self, choice: int) -> None:
         # TODO: If the choice is 1, do nothing.
-        # TODO: If the choice is 2, update current_page to be the last page in previous_pages.
-        #       Remove that page from previous_pages.
-        # TODO: If the choice is 3 or higher, update previous_pages to append the current_page,
-        #       and get the WikipediaPage corresponding to the chosen option.
-        #       Add the chosen option to the children attribute of current_page.
-        #       Update current_page to be the WikipediaPage corresponding to the chosen option.
+        # TODO: If the choice is 2 and previous_pages is not empty, update current_page to be 
+        #       the last page in previous_pages. Remove that page from previous_pages.
+        # TODO: If the choice is 3 or higher (or it is 2, but previous_pages is empty), update 
+        #       previous_pages to append the current_page, and get the WikipediaPage 
+        #       corresponding to the chosen option. Add the chosen option to the children 
+        #       attribute of current_page. Update the current_page attribute to be the WikipediaPage 
+        #       corresponding to the chosen option.
+        # TODO: If the choice is invalid, do nothing.
         pass
 
     def interaction_loop(self) -> None:

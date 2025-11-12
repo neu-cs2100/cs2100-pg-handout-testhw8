@@ -15,9 +15,9 @@ Students will get practice with:
 
 ## Part 1: Download and parse a single webpage using `requests` and `BeautifulSoup`
 
-You may need to `pip install requests beautifulsoup4` to install both. Because we are limited in the packages we can install on the Pawtograder servers, you must use these two libraries to download the webpage. You may use Claude or a similar LLM to learn about the syntax needed to do this.
+You may need to `pip3 install requests types-requests beautifulsoup4 types-beautifulsoup4` to install both, along with their type stubs. Because we are limited in the packages we can install on the Pawtograder servers, you must use these two libraries to download the webpage. You may use Claude or a similar LLM to learn about the syntax needed to do this.
 
-Once you have found how to download a webpage in a few lines of code, encapsulate it in a class called `WikipediaPage`. The constructor should take a keyword as the argument, and if there exists a Wikipedia page with that title, it should request and save as attributes:
+Once you have found how to download a webpage in a few lines of code, encapsulate it in a class called `WikipediaPage` (in `wikipedia_page.py`). The constructor should take a keyword as the argument, and if there exists a Wikipedia page with that title, it should request and save as attributes:
 1. The keyword
 2. The text of the webpage
 3. A list of all the Wikipedia links found on the webpage
@@ -36,15 +36,14 @@ Overwrite the `__repr__()` method to return the keyword (title in the URL).
 
 Choose a word, such as "effervescence". Make a class attribute that stores this word as a `target_word`.
 
-Overwrite the `__str__()` method to return a message containing the keyword and the number of times the `target_word` appears
-in the text of the webpage.
+Overwrite the `__str__()` method to return an appropriate message containing the keyword and the number of times the `target_word` appears in the text of the webpage.
 
 When two `WikipediaPage`s are compared, the one with more instances of the `target_word` is considered "bigger".
 
 ## Part 3: Add the ability to interactively traverse the Wikipedia webpage graph
 
 We will now treat the `WikipediaPage` class as a node in a graph (or tree). It has a list of options for what
-its children could be (the Wikipedia links available on the page), but they are not children, because they are
+its children could be (the Wikipedia links available on the page). Those link options are not yet children, because they are
 of type `str` and not `WikipediaPage`. Add another attribute to `WikipediaPage` called `children` which starts
 as an empty list of `WikipediaPage`. We will add pages to it as we interactively surf Wikipedia.org.
 
@@ -53,10 +52,15 @@ You will need to add documentation. You may remove the "TODO" comments after imp
 
 It may be useful to `pip3 install sortedcontainers sortedcontainers-stubs`.
 
+You should test all methods that you write, as usual, except any printed output or user input.
+
 ## Part 4: Try it out
 
 In `main.py`, create an instance of `WikipediaSurfer` and interact with your application. Try to find a webpage
 with a high number of instances of the target word. After quitting, copy the list of keywords outputted into 
 the appropriate question in `Summary.md`.
 
-Anwer the other questions in `Summary.md`.
+Common confusion: The `keyword` is the title of each individual page. The `target_word` is the overall word
+which we are counting in each page.
+
+Also answer the other questions in `Summary.md`.
