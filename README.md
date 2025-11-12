@@ -54,7 +54,10 @@ You will need to add documentation. You may remove the "TODO" comments after imp
 
 It may be useful to `pip3 install sortedcontainers sortedcontainers-stubs`.
 
-As usual, you should test all funtions that you write.
+As usual, you should test all funtions that you write. There is an example test in `test_wikipedia_surfer.py` that
+shows how to write tests for a function that requires user input.
+
+You are not required to test printed output.
 
 ## Part 4: Try it out
 
